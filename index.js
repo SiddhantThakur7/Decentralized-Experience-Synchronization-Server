@@ -44,14 +44,11 @@ app.get("/", (req, res) => {
 app.use("/session/create", CreateRoutes);
 app.use('/session/access', AccessRoutes);
 
-if (process.env.NODE_ENV === 'production') {
-    module.exports.handler = serverless(app);
-} else {
-    server.listen(8080, (err) => {
-        if (err) {
-            console.log(err);
-        }
-        console.log("Signalling Server Started on PORT 8080");
-    });
-}
+const port = process.env.PORT || 8080;
+server.listen(8080, (err) => {
+    if (err) {
+        console.log(err);
+    }
+    console.log("Signalling Server Started on PORT 8080");
+});
 
