@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require('path');
 const bodyParser = require("body-parser");
+const serverless = require('serverless-http');
 
 const app = express();
 const server = require("http").createServer(app);
@@ -43,9 +44,14 @@ app.get("/", (req, res) => {
 app.use("/session/create", CreateRoutes);
 app.use('/session/access', AccessRoutes);
 
-server.listen(8080, (err) => {
-    if (err) {
-        console.log(err);
-    }
-    console.log("Signalling Server Started on PORT 8080");
-});
+if (process.env.NODE_ENV === 'production') {
+    module.exports.handler = serverless(app);
+} else {
+    server.listen(8080, (err) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log("Signalling Server Started on PORT 8080");
+    });
+}
+
