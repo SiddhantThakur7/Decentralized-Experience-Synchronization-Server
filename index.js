@@ -45,7 +45,7 @@ app.use("/session/create", CreateRoutes);
 app.use('/session/access', AccessRoutes);
 
 const port = process.env.PORT || 8080;
-server.listen(8080, (err) => {
+server.listen(port, (err) => {
     if (err) {
         console.log(err);
     }
