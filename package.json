@@ -23,10 +23,10 @@
     "socket.io": "^4.8.1",
     "utf-8-validate": "^6.0.5",
     "uuid": "^11.0.4",
-    "webpack": "^5.98.0"
+    "webpack": "^5.98.0",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
-    "dotenv": "^16.4.7",
     "webpack-cli": "^6.0.1"
   }
 }
