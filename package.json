@@ -1,5 +1,5 @@
 {
-  "name": "p2p-connection-signalling",
+  "name": "p2p-signalling-evaluation",
   "version": "1.0.0",
   "description": "Signalling server for facilitating client p2p connections.",
   "main": "index.js",
@@ -12,8 +12,11 @@
   "author": "siddhant thakur",
   "license": "ISC",
   "dependencies": {
+    "artillery": "^2.0.22",
     "body-parser": "^1.20.3",
     "bufferutil": "^4.0.9",
+    "chartjs-node-canvas": "^4.1.6",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "nodemon": "^3.1.9",
@@ -23,8 +26,7 @@
     "socket.io": "^4.8.1",
     "utf-8-validate": "^6.0.5",
     "uuid": "^11.0.4",
-    "webpack": "^5.98.0",
-    "dotenv": "^16.4.7"
+    "webpack": "^5.98.0"
   },
   "devDependencies": {
     "webpack-cli": "^6.0.1"

@@ -4,14 +4,95 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <input type="hidden" id="session-url" value=<%=url %>>
-    <input type="hidden" id="offer-sdp" value='<%=JSON.stringify(offer.offer) %>'>
-    <input type=" hidden" id="offer-index" value=<%=offer.offerIndex %>>
+    <title>Loading...</title>
+
+    <style>
+        /* Dark Theme */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .loading-container {
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Loading Text Animation */
+        .loading-text {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            margin-left: 5px;
+            animation: blink 1.5s infinite;
+        }
+
+        .dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Loadingggg!!!!</h1>
+    <div class="loading-container">
+        <div class="loading-text">
+            Loading
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <input type="hidden" id="session-url" value=<%=url %> />
+    <input type="hidden" id="offer-sdp" value='<%=JSON.stringify(offer.offer) %>' />
+    <input type="hidden" id="offer-index" value=<%=offer.offerIndex %> />
 </body>
 
 </html>

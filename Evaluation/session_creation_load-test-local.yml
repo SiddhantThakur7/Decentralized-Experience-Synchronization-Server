@@ -1,0 +1,12 @@
+config:
+  target: "http://localhost:8080" # Replace with your API's base URL
+  phases:
+    - duration: 600 # Phase duration in seconds
+      arrivalRate: 5 # Starting arrival rate (new users per second)
+      rampTo: 300 # Target arrival rate at the end of the phase
+      name: "Ramp-up phase"
+scenarios:
+  - flow:
+      - post:
+          url: "/session/create" # Replace with your API endpoint
+          timeout: 60000 # timeout in milliseconds (60 seconds)

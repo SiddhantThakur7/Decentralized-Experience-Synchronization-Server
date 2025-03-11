@@ -1,0 +1,12 @@
+config:
+  target: "https://decentralized-experience-synchronization.onrender.com" # Replace with your API's base URL
+  phases:
+    - duration: 600 # Phase duration in seconds
+      arrivalRate: 5 # Starting arrival rate (new users per second)
+      rampTo: 300 # Target arrival rate at the end of the phase
+      name: "Ramp-up phase"
+scenarios:
+  - flow:
+      - post:
+          url: "/session/create"
+          timeout: 60000 # timeout in milliseconds (60 seconds)
